@@ -9,7 +9,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
 const options = require('./swagger.json');
 const specs = swaggerJsdoc(options);
-const sequelize = require('./db/dbConnect');
+const sequelize = require('./db/dbconnect');
 
 
 (async function dbConnect(){
