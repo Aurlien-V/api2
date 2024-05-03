@@ -22,7 +22,7 @@ const sequelize = require('./db/dbconnect');
   }
 })();
 
-const Music = require('./model/Music');
+const Music = require('./models/Musics');
 
 (async () => {
 
