@@ -1,14 +1,12 @@
 const express = require('express');
 const { Sequelize } = require('sequelize');
 const cors = require('cors');
-const app = express();
-const port = 3000;
-const version = "v1";
-const router = require('./routes/routes');
 const swaggerUi = require('swagger-ui-express');
-const swaggerJsdoc = require('swagger-jsdoc');
-const options = require('./swagger.json');
-const specs = swaggerJsdoc(options);
+const swaggerDocument = require('./swagger.json'); // Importez votre fichier JSON Swagger ici
+const port = 3000;
+const version = 'v1';
+const router = require('./routes/routes');
+const app = express();
 const db = require('./db/dbconnect')
 
 app.use(cors());
