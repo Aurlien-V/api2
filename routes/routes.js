@@ -7,13 +7,17 @@ router.get("/", (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    res.status(200).json({ success: 'Bravo' });
+    res.status(200).json({ success: 'bounty' });
 });
 
+router.get('/musics', controllerMusic.find);
 
-router.get('/music', controllerMusic.find);
-router.post('/music', controllerMusic.create);
-router.get('/music/random', controllerMusic.random);
-router.get('/music/:id', controllerMusic.findById);
+router.post('/musics', controllerMusic.create);
+
+router.delete('/musics/:id', controllerMusic.delete);
+
+router.get('/musics/:id', controllerMusic.findById);
+
+router.get('/musics/random', controllerMusic.random);
 
 module.exports = router;
