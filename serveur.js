@@ -2,18 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json'); // Importez votre fichier JSON Swagger ici
-const swaggerJS = require("swagger-jsdoc");
-const option = swaggerJS(swaggerDocument);
 const port = 3000;
 const version = 'v1';
 const router = require('./routes/routes');
 const app = express();
 const db = require('./db/dbconnect')
-
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(`/api/${version}`, router);
 
 app.use(cors());
 app.use(express.json());

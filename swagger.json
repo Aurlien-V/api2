@@ -54,6 +54,16 @@
             },
             "post": {
                 "summary": "Créer une nouvelle musique",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Music"
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "Succès",
@@ -90,17 +100,15 @@
                         }
                     }
                 }
-            }
-        },
-        "musics/{id}": {
+            },
             "delete": {
-                "summary": "Supprimer une musique par son ID",
+                "summary": "Supprimer une musique par ID",
                 "parameters": [
                     {
-                        "name":"id",
+                        "name": "id",
                         "in": "path",
                         "required": true,
-                        "description": "ID de la musique",
+                        "description": "ID de la musique à supprimer",
                         "schema": {
                             "type": "string"
                         }
@@ -108,28 +116,47 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Musique supprimé avec succès",
+                        "description": "Succès",
                         "content": {
                             "application/json": {
-                                "type": "string"
+                                "example": {
+                                    "message": "Suppression effectuée."
+                                }
                             }
                         }
                     }
                 }
             }
-        },
-        "/api/v1/musics/random": {
-            "get": {
-                "summary": "Obtenir une musique aléatoire",
-                "responses": {
-                    "200": {
-                        "description": "Succès",
-                        "content": {
-                            "application/json": {
-                                "example": {}
-                            }
-                        }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Music": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "cover": {
+                        "type": "string"
+                    },
+                    "sound": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "category": {
+                        "type": "string"
                     }
+                },
+                "required": ["id", "cover", "sound", "title", "category"],
+                "example": {
+                    "id": 1,
+                    "cover": "cheche.jpeg",
+                    "sound": "La-Chenille-Synchro-la-Cheu-Cheu.mp3",
+                    "title": "La-Chenille-Synchro",
+                    "category": "Paillarde"
                 }
             }
         }
