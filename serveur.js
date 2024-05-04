@@ -24,8 +24,8 @@ db.sync({ force: true }).then(() => {
     console.log(`Example app listening at http://localhost:${port}`);
   });
 
-  const data = require('./model/data.json');
-  const Music = require('./model/Music');
+  const data = require('./models/data.json');
+  const Music = require('./models/Musics.json');
   data.forEach(async (music) => {
     await Music.create(music);
   })
