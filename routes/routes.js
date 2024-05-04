@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const controllerMusic = require('../controller/Music');
+const controllerMusic = require('../controllers/musics');
 
 router.get("/", (req, res) => {
     res.status(200).json({ success: "racine API" });
