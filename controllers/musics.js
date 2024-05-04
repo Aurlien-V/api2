@@ -1,3 +1,4 @@
+//const data = require("./../models/data.json");
 const Music = require("../models/Musics");
 const controllerMusic =
 {
@@ -50,4 +51,4 @@ const controllerMusic =
     }
 }
 
-module.exports = controllerMusic;
+module.exports = controllerMusic
