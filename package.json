@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "node": "^22.1.0",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "name": "0",
+  "version": "1.0.0",
+  "main": "serveur.js",
+  "scripts": {
+    "start": "node serveur.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "keywords": [],
+  "description": ""
+}
