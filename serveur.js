@@ -15,18 +15,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(`/api/${version}`, router);
 
-// Middleware pour afficher la documentation Swagger
-app.use(`/api-docs`, swaggerUi.serve, swaggerUi.setup(option));
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(`/api/${version}`, router);
 
-db.sync({ force: true }).then(() => {
+// Middleware pour afficher la documentation Swagger
+app.use(`/api-docs`, swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+db.sync().then(() => {
   console.log('DBConnect est synchronisé')
   app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
   });
-
-  const data = require('./models/data.json');
-  const Music = require('./models/Musics');
-  data.forEach(async (music) => {
-    await Music.create(music);
-  })
 })
