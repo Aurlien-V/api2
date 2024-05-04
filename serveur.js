@@ -25,7 +25,7 @@ db.sync({ force: true }).then(() => {
   });
 
   const data = require('./models/data.json');
-  const Music = require('./models/Musics.json');
+  const Music = require('./models/Musics');
   data.forEach(async (music) => {
     await Music.create(music);
   })
