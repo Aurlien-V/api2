@@ -19,6 +19,7 @@
     "sound": "Nelly-Furtado-Promiscuous.mp3",
     "title": "Nelly-Furtado-Promiscuous",
     "category": "electro"
+  },
   {
     "id": 4,
     "cover": "Brandy-Monica-Modjo.jpg",
@@ -38,6 +39,6 @@
     "cover": "corse.jpg",
     "sound": "corse.mp3",
     "title": "Le-sandwich-corse",
-    "category": "blague
+    "category": "blague"
   }
 ]
